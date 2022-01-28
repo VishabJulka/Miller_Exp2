@@ -246,7 +246,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-6" id="wholePage">
                 <div class="card" style="padding-bottom: 0;">
                     <p class="card-header bg-primary text-white" style="font-size: 20px;"> <strong> Observation
                             Table for : </strong>
@@ -566,12 +566,10 @@
     </div>
     </div>
     <script src="./html2canvas.min.js"></script>
-        <script>
-            
+
+        <script>    
             document.getElementById("table-download").onclick = function () {
-                var targetVariable = valueDownload;
-                targetVariable = targetVariable + '1';
-                const screenshotTarget = document.getElementById(targetVariable);
+                const screenshotTarget = document.getElementById('wholePage');
                 html2canvas(screenshotTarget).then((canvas) => {
                     const base64image = canvas.toDataURL("image/png");
                     var anchor = document.createElement('a');
